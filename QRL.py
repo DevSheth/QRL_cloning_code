@@ -41,9 +41,6 @@ for nexp in range(0,1):
     q = QuantumRegister(3, 'q')
     c = ClassicalRegister(1)
     qc = QuantumCircuit(q,c)
-    
-    q1 = QuantumRegister(1, 'q1')
-    qc1 = QuantumCircuit(q1)
         
     while count < 50:
         qc.reset(q[0])
@@ -75,9 +72,10 @@ for nexp in range(0,1):
             b.append(random.uniform(-delta/2, delta/2))
             delta = delta/eta
         else:
-            a.append(0.0)
-            b.append(0.0)
             delta = delta*eta
+        
+        q1 = QuantumRegister(1, 'q1')
+        qc1 = QuantumCircuit(q1)
         
         for j in range(0,len(a)):
             qc1.rx(a[len(a)-1-j],q1[0])
