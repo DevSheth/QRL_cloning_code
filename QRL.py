@@ -68,8 +68,8 @@ for nexp in range(0,1):
         sheet.cell(row=count+2, column=3+4*nexp).value = m[4]
         
         if(m[4]=='1'):
-            a.append(random.uniform(-delta/2, delta/2))
-            b.append(random.uniform(-delta/2, delta/2))
+            a.append(random.uniform(-delta, delta))
+            b.append(random.uniform(-delta, delta))
             delta = delta/eta
         else:
             delta = delta*eta
